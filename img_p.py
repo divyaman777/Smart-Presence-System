@@ -4,7 +4,7 @@ import numpy as np
 import cv2
 import pickle
 a=set()
-recognizer = cv2.face.LBPHFaceRecognizer_create(2,2,7,7,20)
+recognizer = **cv2.face.LBPHFaceRecognizer_create(2,2,7,7,20)**
 
 def img(sclass,img_loc):
 
