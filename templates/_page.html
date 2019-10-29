@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Pacifico&display=swap" rel="stylesheet">
+    <title>!!WELCOME!!</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Presence System</h1>
+        <form class="form-container" action ="/clogin" method = "post">
+            <div class="usr">
+                <label for="usr">User_Name</label>
+                <input type="text" id="usr" placeholder="User_Name" name ="usr">        
+            </div>
+            <div class="password">
+                <label for="password">Password</label>
+                <input type="text" id="password" placeholder="Password" name ="password">
+            </div>
+            <button type="submit">Mark Presence</button>
+	<button type="submit" class="btn btn-secondary"><a href='/add'>Alter DataBase</a></button>
+	<button type="submit" class="btn btn-secondary"><a href='/dataset'>Refresh DataBase</a></button>
+        </form>
+	</div>
+</body>
+</html>
