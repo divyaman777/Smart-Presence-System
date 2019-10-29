@@ -15,7 +15,7 @@ def img(sclass,img_loc):
     labels = {v:k for k,v in og_labels.items()}
     
 
-    face=cv2.CascadeClassifier('C:/Users/user/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/cv2/data/haarcascade_frontalface_alt2.xml')
+    face=cv2.CascadeClassifier('cascades\\data\\haarcascade_frontalface_alt2.xml')
     a=set()
     recognise = cv2.face.EigenFaceRecognizer_create()
 
