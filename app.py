@@ -78,10 +78,10 @@ def add2db():
         if(all_students.check(data["adno"])):
             if(all_students.add_data(data["name"],data["eid"],data["ph"],data["class"],data["adno"])):
 
-                if not os.path.exists("train_folder\\"+data["class"]):
-                    os.makedirs("train_folder\\"+data["class"])
-                os.makedirs("train_folder\\"+data["class"]+"\\"+data["adno"])
-                app.config["image_upload"]="train_folder\\"+data["class"]+"\\"+data["adno"]
+                if not os.path.exists("train_folder/"+data["class"]):
+                    os.makedirs("train_folder/"+data["class"])
+                os.makedirs("train_folder/"+data["class"]+"/"+data["adno"])
+                app.config["image_upload"]="train_folder/"+data["class"]+"/"+data["adno"]
                 file1 = request.files['pic1']
                 file2 = request.files['pic2']
                 file3 = request.files['pic3']
@@ -89,14 +89,14 @@ def add2db():
                 file5 = request.files['pic5']
                 file6 = request.files['pic6']
                 try:
-                    file1.save("train_folder\\"+data["class"]+"\\"+data["adno"]+"\\"+file1.filename)
-                    file2.save("train_folder\\"+data["class"]+"\\"+data["adno"]+"\\"+file2.filename)
-                    file3.save("train_folder\\"+data["class"]+"\\"+data["adno"]+"\\"+file3.filename)
-                    file4.save("train_folder\\"+data["class"]+"\\"+data["adno"]+"\\"+file4.filename)
-                    file5.save("train_folder\\"+data["class"]+"\\"+data["adno"]+"\\"+file5.filename)
-                    file6.save("train_folder\\"+data["class"]+"\\"+data["adno"]+"\\"+file6.filename)
+                    file1.save("train_folder/"+data["class"]+"/"+data["adno"]+"/"+file1.filename)
+                    file2.save("train_folder/"+data["class"]+"/"+data["adno"]+"/"+file2.filename)
+                    file3.save("train_folder/"+data["class"]+"/"+data["adno"]+"/"+file3.filename)
+                    file4.save("train_folder/"+data["class"]+"/"+data["adno"]+"/"+file4.filename)
+                    file5.save("train_folder/"+data["class"]+"/"+data["adno"]+"/"+file5.filename)
+                    file6.save("train_folder/"+data["class"]+"/"+data["adno"]+"/"+file6.filename)
                 except:
-                    pass
+                    return "IMAGE NOT UPLOADED"
                 return render_template('_page.html')
             else:
                 return("Check Your Connection!!")
