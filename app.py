@@ -52,7 +52,7 @@ def upload():
         app.config['detect_folder'] = detect
         import img_p
         b=set()
-        b=img_p.img(sclass,file.filename)##To Be Edited
+        b=img_p.img(sclass,file.filename)
         temp_list=list()
         names=list()
         email=list()

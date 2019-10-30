@@ -5,9 +5,9 @@ import cv2
 import pickle
 def train(sclass):
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    image_dir = os.path.join(BASE_DIR, "train_folder\\"+sclass)
+    image_dir = os.path.join(BASE_DIR, "train_folder/"+sclass)
 
-    face_cascade = cv2.CascadeClassifier('cascades\\data\\haarcascade_frontalface_alt2.xml')
+    face_cascade = cv2.CascadeClassifier(r'cascades/data/haarcascade_frontalface_alt2.xml')
     recognizer = cv2.face.LBPHFaceRecognizer_create()
     current_id = 0
     label_ids ={}
@@ -36,10 +36,10 @@ def train(sclass):
                     y_labels.append(id_)
     print(y_labels)
 
-    fw=open("train_folder\\"+sclass+"\\"+"labels.pickle","wb")
+    fw=open("train_folder/"+sclass+"/"+"labels.pickle","wb")
     pickle.dump(label_ids,fw)
     fw.close()
 
     recognizer.train(x_train,np.array(y_labels))
-    recognizer.save("train_folder\\"+sclass+"\\"+"trainer.yml")
+    recognizer.save("train_folder/"+sclass+"/"+"trainer.yml")
     return "Done"
