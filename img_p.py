@@ -10,12 +10,12 @@ def img(sclass,img_loc):
 
     recognizer.read("train_folder/"+sclass+"/"+"trainer.yml")##
 
-    fr=open("train_folder\\"+sclass+"\\"+"labels.pickle","rb")
+    fr=open("train_folder/"+sclass+"/"+"labels.pickle","rb")
     og_labels=pickle.load(fr)
     labels = {v:k for k,v in og_labels.items()}
     
 
-    face=cv2.CascadeClassifier('cascades\\data\\haarcascade_frontalface_alt2.xml')
+    face=cv2.CascadeClassifier(r'cascades/data/haarcascade_frontalface_alt2.xml')
     a=set()
     recognise = cv2.face.EigenFaceRecognizer_create()
 
