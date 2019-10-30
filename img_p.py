@@ -8,7 +8,7 @@ recognizer = cv2.face.LBPHFaceRecognizer_create(2,2,7,7,20)
 
 def img(sclass,img_loc):
 
-    recognizer.read("train_folder\\"+sclass+"\\"+"trainer.yml")
+    recognizer.read("train_folder/"+sclass+"/"+"trainer.yml")##
 
     fr=open("train_folder\\"+sclass+"\\"+"labels.pickle","rb")
     og_labels=pickle.load(fr)
