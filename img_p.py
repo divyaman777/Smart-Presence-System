@@ -22,7 +22,7 @@ def img(sclass,img_loc):
     img = cv2.imread('uploads/'+img_loc)
 
     gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-    faces = face.detectMultiScale(gray,1.5,5)
+    faces = face.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5,minSize=(5, 5))
 
     for (x,y,w,h) in faces:
         gray_face = cv2.resize(gray[y:y+h,x:x+w],(250,210))

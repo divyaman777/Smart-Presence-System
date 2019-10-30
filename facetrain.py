@@ -29,7 +29,7 @@ def train(sclass):
 
                 image_array = np.array(pil_image, "uint8")
     
-                faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.5, minNeighbors=5)
+                faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.5, minNeighbors=1)
                 for(x,y,w,h) in faces:
                     roi = image_array[y:y+h,x:x+w]
                     x_train.append(roi)
