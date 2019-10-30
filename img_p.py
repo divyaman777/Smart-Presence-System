@@ -35,8 +35,8 @@ def img(sclass,img_loc):
         else:
             print("Unknown")
         
-        color = (0,0,255)
-        stroke = 1
+        color = (22,0,255)
+        stroke = 2
         cv2.rectangle(img, (x,y),(x+w,y+h),color,stroke)
         cv2.imwrite('static/detect/'+img_loc,img)
         #cv2.waitKey(10)
