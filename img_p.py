@@ -18,7 +18,7 @@ def img(sclass,img_loc):
     face=cv2.CascadeClassifier(r'cascades/data/haarcascade_frontalface_alt2.xml')
     a=set()
 
-    img = cv2.imread('uploads/'+img_loc)
+    img = cv2.imread(r'uploads/'+img_loc)
 
     gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     faces = face.detectMultiScale(gray, scaleFactor=1.3, minNeighbors=5,minSize=(10, 10))##
