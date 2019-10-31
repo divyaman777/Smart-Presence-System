@@ -48,5 +48,5 @@ def img(sclass,img_loc):
 
     
     cv2.imwrite('static/detect/'+img_loc,im)
-        #cv2.waitKey(10)
+        #cv2.waitKey(10)###
     return(a)
