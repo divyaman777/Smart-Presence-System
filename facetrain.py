@@ -24,7 +24,7 @@ def train(sclass):
                     label_ids[label] = current_id
                     current_id+=1
                 id_=label_ids[label]
-                print(label_ids)
+                #print(label_ids)
                 pil_image = Image.open(path).convert("L") #grayscale
 
                 image_array = np.array(pil_image, "uint8")
@@ -34,7 +34,7 @@ def train(sclass):
                     roi = image_array[y:y+h,x:x+w]
                     x_train.append(roi)
                     y_labels.append(id_)
-    print(y_labels)
+    #print(y_labels)
 
     fw=open("train_folder/"+sclass+"/"+"labels.pickle","wb")
     pickle.dump(label_ids,fw)

@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Pacifico&display=swap" rel="stylesheet">
-    <title>!!WELCOME!!</title>
+  <meta charset="UTF-8">
+  <title>WELCOME</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'><link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
 </head>
 <body>
-    <div class="container">
-        <h1>Smart Presence System</h1>
-        <form class="form-container" action ="/clogin" method = "post">
-            <div class="usr">
-                <label for="usr">User_Name</label>
-                <input type="text" id="usr" placeholder="User_Name" name ="usr">        
-            </div>
-            <div class="password">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Password" name ="password">
-            </div>
-            <button type="submit">Mark Presence</button>
-	<button type="submit" class="btn btn-secondary"><a href='/add'>Alter DataBase</a></button>
-	<button type="submit" class="btn btn-secondary"><a href='/dataset'>Refresh DataBase</a></button>
-        </form>
-	</div>
+<form class="login-form" action="/clogin" method = "post">
+    <h1>Smart Presence System</h1>
+    <div class="form-field">
+        <i class="fas fa-user"></i>
+        <input type="text" name="usr" id="username" class="form-field" pattern="^[a-zA-Z0-9_-]{1,16}$" placeholder=" " required>
+        <label for="username">Username</label>
+    </div>
+    <div class="form-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" id="password" class="form-field" placeholder=" " required>
+        <label for="password">Password</label>
+    </div>
+  <button type="submit" value="Login" class="btn">Login</button>
+  <div style="display: inline-block;">
+    <span style="border-bottom: 1px solid white; padding: 5px; margin: 5px;"><a style="text-decoration: none; color: white;" href='/add'>Alter DataBase</a></span>
+    <span style="border-bottom: 1px solid white; padding: 5px; margin: 5px;"><a style="text-decoration: none; color: white;" href='/dataset'>Refresh DataBase</a></span>
+  </div>
+</form>
+
+  
 </body>
 </html>

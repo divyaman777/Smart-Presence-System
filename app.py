@@ -47,7 +47,7 @@ def upload():
 
         file.save(os.path.join(app.config["IMAGE_UPLOADS"],file.filename))
         
-        print("Saved")
+        #print("Saved")
         detect = os.path.join('static','detect')
         app.config['detect_folder'] = detect
         import img_p

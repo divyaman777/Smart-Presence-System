@@ -1,28 +1,82 @@
-<html>
-<head><title>"DATA!!"</title></head>
-<body>
-<h2>CREATE YOUR ACCOUNT</h2>
-<form action ="/add2db" enctype="multipart/form-data" method = "post">
-<p>Enter Your Name</p>
-<p><input type = "text" name ="name"/</p>
-<p>Enter Your Email Id</p>
-<p><input type = "text" name ="eid"/</p>
-<p>Enter Your Phone Number</p>
-<p><input type = "text" name ="ph"/</p>
-<p>Enter Your Class</p>
-<p><input type = "text" name ="class"/</p>
-<p>Enter Your Addmission No.</p>
-<p><input type = "text" name ="adno"/</p>
-<p>
-<input type = "file" name="pic1"/>
-<input type = "file" name="pic2"/></p>
-<p><input type = "file" name="pic3"/>
-<input type = "file" name="pic4"/></p>
-<p><input type = "file" name="pic5"/>
-<input type = "file" name="pic6"/>
-</p>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Data</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="{{url_for('static',filename='css/add2db_style.css')}}">
 
-<p><input type = "submit"/</p>
-</form>
+</head>
+<body>
+<br><div class="container">
+    <h2>Create Account</h2>
+    <form action ="/add2db" enctype="multipart/form-data" method = "post">
+      <div class="form-group">
+          <label for="Name">Name</label>
+          <input type="text" class="form-control" id="Name" placeholder="Enter Name" name ="name">
+        </div>
+        <div class="form-group">
+          <label for="Email1">Email address</label>
+          <input type="email" class="form-control" id="Email1" placeholder="Enter email" name ="eid">
+        </div>
+        <div class="form-group">
+            <label for="Phone">Phone</label>
+            <input type="text" class="form-control" id="Phone" placeholder="Enter Phone" name ="ph">
+          </div>
+          <div class="form-group">
+              <label for="Class">Class</label>
+              <input type="text" class="form-control" id="Class" placeholder="Enter Class" name ="class">
+            </div>
+            <div class="form-group">
+                <label for="AdmNo">AdmNo</label>
+                <input type="text" class="form-control" id="AdmNo" placeholder="Enter Admission No." name ="adno">
+              </div>
+              <div class="row">
+                  <div class="col-sm-2 imgUp">
+                    <div class="imagePreview"></div>
+                <label class="btn btn-primary">
+                    Upload<input type="file" class="uploadFile img" value="Upload Photo" name="pic1" style="width: 0px;height: 0px;overflow: hidden;">
+                        </label>
+                  </div>
+                  <div class="col-sm-2 imgUp">
+                    <div class="imagePreview"></div>
+                <label class="btn btn-primary">
+                    Upload<input type="file" class="uploadFile img" value="Upload Photo" name="pic2" style="width: 0px;height: 0px;overflow: hidden;">
+                        </label>
+                  </div>
+                  <div class="col-sm-2 imgUp">
+                    <div class="imagePreview"></div>
+                <label class="btn btn-primary">
+                    Upload<input type="file" class="uploadFile img" value="Upload Photo" name="pic3" style="width: 0px;height: 0px;overflow: hidden;">
+                        </label>
+                  </div>
+                  <div class="col-sm-2 imgUp">
+                      <div class="imagePreview"></div>
+                  <label class="btn btn-primary">
+                      Upload<input type="file" class="uploadFile img" value="Upload Photo" name="pic4" style="width: 0px;height: 0px;overflow: hidden;">
+                          </label>
+                    </div>
+                    <div class="col-sm-2 imgUp">
+                      <div class="imagePreview"></div>
+                  <label class="btn btn-primary">
+                      Upload<input type="file" class="uploadFile img" value="Upload Photo" name="pic5" style="width: 0px;height: 0px;overflow: hidden;">
+                          </label>
+                    </div>
+                    <div class="col-sm-2 imgUp">
+                      <div class="imagePreview"></div>
+                  <label class="btn btn-primary">
+                      Upload<input type="file" class="uploadFile img" value="Upload Photo" name="pic6" style="width: 0px;height: 0px;overflow: hidden;">
+                          </label>
+                    </div>
+                  <!-- <i class="fa fa-plus imgAdd"></i> -->
+                 </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script><script  src="{{url_for('static',filename='js/add2db_script.js')}}"></script>
+
 </body>
 </html>
