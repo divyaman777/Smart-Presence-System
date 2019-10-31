@@ -48,6 +48,5 @@ def img(sclass,img_loc):
 
     
     cv2.imwrite('static/detect/'+img_loc,im)
-    os.remove('uploads/'+img_loc)
         #cv2.waitKey(10)
     return(a)
