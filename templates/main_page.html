@@ -1,12 +1,31 @@
 <html>
+    <head>
+        <title>UPLOAD IMAGE</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: url("https://media.wired.com/photos/5d93ee2128aa880008434826/master/w_2560%2Cc_limit/business%252520-%252520top%252520-%252520ai%252520behind%252520deepfakes.jpg") 0/cover fixed;
+  font-family: "Lato";
+}
+        </style>
+    </head>
 <body>
+<div class="container">
 <form action="/upload" method = "POST" enctype = "multipart/form-data">
-<p>Enter Your Class</p>
-<p><input type = "text" name ="sclass"/</p>
-<p>
-<input type = "file" name="pic"/>
-</p>
-<input type = "submit"/>
-</form>
-</boby>
+        <div class="form-group">
+          <p style="color:white;"><font size="+3"><label for="class">Enter Class</label></font></p>
+          <input type="text" class="form-control" id="class" placeholder="Enter Class" name ="sclass">
+        </div>
+        <div class="form-group">
+          <p style="color:white;"><font size="+3"><label for="file">Upload Class Photo</label></font></p>
+          <input type="file" class="form-control" id="file" placeholder="file" name="pic">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+</body>
 </html>

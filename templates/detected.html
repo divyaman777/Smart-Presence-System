@@ -1,28 +1,50 @@
 <html>
-<head><title>Detected!!</title></head>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>SPSV1-detected</title>
+    <style>
+        body {
+display: flex;
+height: 100vh;
+justify-content: center;
+align-items: center;
+background: url("https://static-ssl.businessinsider.com/image/5769b2afdd089557128b4ad9-1024/face_tracking_4x3_1024.png") 0/cover fixed;
+font-family: "Lato";
+}
+    </style>
+</head>
 <body>
-<h1>Detected Faces Are!!</h1>
-<img src="{{image}}" alt="Image">
-<p>Total Record!!</p>
-<center>
-<table border="2px">
-<tr>
-<th>Admission No. </th>
-<th>NAME</th>
-<th>EMAIL</th>
-</tr>
-{% for name in names %}
-{% for email in emails %}
-{% for a in ad %} 
-<tr>
-<td>{{a}}</td>
-<td>{{name}}</td>
-<td>{{email}}</td>
-</tr>
-{% endfor %}
-{% endfor %}
-{% endfor %}
-</table>
-</center>
-</boby>
+<div class="container">
+<h1>Detected faces are</h1>
+<div class="col-sm-12" style="text-align: center;">
+<img src="{{image}}" alt="Image" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/No_image_available_500_x_500.svg/500px-No_image_available_500_x_500.svg.png'" class="img-fluid" width="700px" height="300px">
+</div>
+<h4>Record</h4>
+<table class="table table-bordered table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Admission No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for name in names %}
+            {% for email in emails %}
+            {% for a in ad %} 
+          <tr>
+            <td>{{a}}</td>
+            <td>{{name}}</td>
+            <td>{{email}}</td>
+          </tr>
+            {% endfor %}
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
 </html>

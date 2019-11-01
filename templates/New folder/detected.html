@@ -1,0 +1,28 @@
+<html>
+<head><title>Detected!!</title></head>
+<body>
+<h1>Detected Faces Are!!</h1>
+<img src="{{image}}" alt="Image">
+<p>Total Record!!</p>
+<center>
+<table border="2px">
+<tr>
+<th>Admission No. </th>
+<th>NAME</th>
+<th>EMAIL</th>
+</tr>
+{% for name in names %}
+{% for email in emails %}
+{% for a in ad %} 
+<tr>
+<td>{{a}}</td>
+<td>{{name}}</td>
+<td>{{email}}</td>
+</tr>
+{% endfor %}
+{% endfor %}
+{% endfor %}
+</table>
+</center>
+</boby>
+</html>
