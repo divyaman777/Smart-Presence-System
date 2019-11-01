@@ -118,7 +118,7 @@ def refresh_data():
         data=request.form.to_dict()
         sclass=request.form["class"]
         password=request.form["password"]
-        if (sclass in all_class and password=="123dt"):
+        if (sclass in all_class and password=="dvah"):
             import facetrain
             return facetrain.train(sclass)
     

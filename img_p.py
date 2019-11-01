@@ -31,7 +31,8 @@ def img(sclass,img_loc):
             print(conf)
             print(labels[id_])
             a.add(labels[id_])
-        
+        else:
+            print(conf,labels[id_])
         color = (22,0,255)
         stroke = 3
         cv2.rectangle(img, (x,y),(x+w,y+h),color,stroke)
