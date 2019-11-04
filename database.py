@@ -55,8 +55,8 @@ class all_students:
 #a=all_students
 #b=a.get_info("2018bcs1011")
 #print(b)
-
-
+#c=a.add_data("Vidit","Email4","phone","CSE-2","2018bcs1174")
+#print(c)
 
 
 

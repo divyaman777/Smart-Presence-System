@@ -54,20 +54,27 @@ def upload():
         b=set()
         b=img_p.img(sclass,file.filename)
         temp_list=list()
-        names=list()
-        email=list()
-        ad=list()
-        for i in b:
-            from database import all_students
-            temp=all_students.get_info(i)
-            temp_list.append(temp)
-        for j in temp_list:
-            names.append(j[0])
-            email.append(j[1])
-            ad.append(j[2])
+        #names=list()
+        #email=list()
+        #ad=list()
+        for i in list(b):
+            try:
+                from database import all_students
+                temp=all_students.get_info(i)
+                temp_dict=dict()
+                temp_dict['name']=temp[0]
+                temp_dict['email']=temp[1]
+                temp_dict['ad']=temp[2]
+                temp_list.append(temp_dict)
+            except:
+                pass
+        #for j in temp_list:
+          #  names.append(j[0])
+            #email.append(j[1])
+            #ad.append(j[2])
         image = os.path.join(app.config['detect_folder'],file.filename)
         print(image)
-        return render_template('detected.html',image = image,names=names,emails=email,ad=ad)
+        return render_template('detected.html',image =image, students=temp_list)
     else:
         return("WRONG FILE...!! IMAGES ONLY")
 

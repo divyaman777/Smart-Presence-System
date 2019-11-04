@@ -8,7 +8,7 @@ display: flex;
 height: 100vh;
 justify-content: center;
 align-items: center;
-background: url("https://static-ssl.businessinsider.com/image/5769b2afdd089557128b4ad9-1024/face_tracking_4x3_1024.png") 0/cover fixed;
+background: url("https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg") 0/cover fixed;
 font-family: "Lato";
 }
     </style>
@@ -29,16 +29,12 @@ font-family: "Lato";
           </tr>
         </thead>
         <tbody>
-            {% for name in names %}
-            {% for email in emails %}
-            {% for a in ad %} 
+            {% for student in students %}
           <tr>
-            <td>{{a}}</td>
-            <td>{{name}}</td>
-            <td>{{email}}</td>
+            <td>{{student.ad}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.email}}</td>
           </tr>
-            {% endfor %}
-            {% endfor %}
             {% endfor %}
         </tbody>
       </table>

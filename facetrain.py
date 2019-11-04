@@ -24,12 +24,13 @@ def train(sclass):
                     label_ids[label] = current_id
                     current_id+=1
                 id_=label_ids[label]
-                #print(label_ids)
+                print(id_)####
+                print(label_ids)###
                 pil_image = Image.open(path).convert("L") #grayscale
 
                 image_array = np.array(pil_image, "uint8")
     
-                faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.5, minNeighbors=1)
+                faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.3, minNeighbors=5,minSize=(10, 10))
                 for(x,y,w,h) in faces:
                     roi = image_array[y:y+h,x:x+w]
                     x_train.append(roi)

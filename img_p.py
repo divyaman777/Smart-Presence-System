@@ -24,13 +24,14 @@ def img(sclass,img_loc):
     faces = face.detectMultiScale(gray, scaleFactor=1.3, minNeighbors=5,minSize=(10, 10))##
 
     for (x,y,w,h) in faces:
-        gray_face = cv2.resize(gray[y:y+h,x:x+w],(250,210))
-
+        gray_face = cv2.resize(gray[y:y+h,x:x+w],(250,210))  #
         id_,conf  =  recognizer.predict(gray_face)
         if conf<=70:
             print(conf)
-            print(labels[id_])
-            a.add(labels[id_])
+            print(id_)
+            if (id_ in labels):
+                print(labels[id_])
+                a.add(labels[id_])
         else:
             print(conf,labels[id_])
         color = (22,0,255)
