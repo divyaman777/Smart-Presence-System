@@ -27,7 +27,7 @@ def img(sclass,img_loc):
         gray_face = cv2.resize(gray[y:y+h,x:x+w],(110,110))  #resize()
         gray_face_np = np.array(gray_face, 'uint8')
         id_,conf  =  recognizer.predict(gray_face_np)
-        if conf<=76:
+        if conf<=80:
             print(conf)
             print(id_)
             if (id_ in labels):
