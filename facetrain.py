@@ -32,8 +32,9 @@ def train(sclass):
     
                 faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.3, minNeighbors=5,minSize=(10, 10))
                 for(x,y,w,h) in faces:
-                    roi = image_array[y:y+h,x:x+w]
-                    x_train.append(roi)
+                    roi = cv2.resize(image_array[y:y+h,x:x+w],(110,110)) #cv2.resize(gray[y:y+h,x:x+w],(110,110))
+                    roi_np = np.array(roi, 'uint8')
+                    x_train.append(roi_np)
                     y_labels.append(id_)
     #print(y_labels)
 

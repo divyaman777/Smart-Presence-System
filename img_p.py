@@ -4,7 +4,7 @@ import numpy as np
 import cv2
 import pickle
 a=set()
-recognizer = cv2.face.LBPHFaceRecognizer_create(2,2,7,7,20)
+recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 def img(sclass,img_loc):
 
@@ -24,16 +24,18 @@ def img(sclass,img_loc):
     faces = face.detectMultiScale(gray, scaleFactor=1.3, minNeighbors=5,minSize=(10, 10))##
 
     for (x,y,w,h) in faces:
-        gray_face = cv2.resize(gray[y:y+h,x:x+w],(250,210))  #
-        id_,conf  =  recognizer.predict(gray_face)
-        if conf<=70:
+        gray_face = cv2.resize(gray[y:y+h,x:x+w],(110,110))  #resize()
+        gray_face_np = np.array(gray_face, 'uint8')
+        id_,conf  =  recognizer.predict(gray_face_np)
+        if conf<=76:
             print(conf)
             print(id_)
             if (id_ in labels):
                 print(labels[id_])
                 a.add(labels[id_])
         else:
-            print(conf,labels[id_])
+            if (id_ in labels):
+                print(conf,labels[id_])
         color = (22,0,255)
         stroke = 3
         cv2.rectangle(img, (x,y),(x+w,y+h),color,stroke)
